@@ -8,7 +8,6 @@
     <%= action_cable_meta_tag %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A production ready example Rails app that's using Docker and Docker Compose.">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
@@ -23,16 +22,12 @@
     <meta name="theme-color" content="#ffffff">
   </head>
 
-  <body class="flex flex-col h-screen justify-between">
+  <body class="flex flex-col min-h-screen h-full justify-between bg-gradient-to-br from-white to-gray-300">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <main class="flex flex-row min-h-screen h-full">
-      <%= render "partials/navigation" %>
-
-      <div class="flex-1 p-4 bg-gray-100">
-        <%= yield %>
-      </div>
+    <main class="max-w-screen-lg mx-auto mb-auto">
+      <%= yield %>
     </main>
 
     <%= render "partials/footer" %>

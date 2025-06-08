@@ -1,1 +1,31 @@
 @import "tailwindcss" source("/app");
+
+@theme {
+  --color-primary: #A8E4A0;
+  --color-primary-hover: #8BCB8B;
+  --color-secondary: #F0E68C;
+  --color-accent: #FF6347;
+  --color-background: #F5F5F5;
+  --color-text: #333333;
+  --color-border: #E0E0E0;
+}
+
+h1 {
+  @apply text-3xl font-bold mb-4;
+}
+
+.card {
+  @apply bg-white shadow-md rounded-lg p-10;
+}
+
+.card .field label {
+  @apply text-gray-800 mb-2;
+}
+
+.card .field em {
+  @apply text-gray-800;
+}
+
+.card .field input {
+  @apply w-full p-0.5 border border-gray-300 rounded-md;
+}
