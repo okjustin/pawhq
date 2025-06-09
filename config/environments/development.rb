@@ -39,7 +39,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # Provide the default URL options for the mailer.
-  config.action_mailer.default_url_options = { host: 'localhost', port: 8000 }
+  config.action_mailer.default_url_options = { host: "localhost", port: 8000 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -83,6 +83,4 @@ Rails.application.configure do
   # Docker supports a bunch of ranges so let's just support everything. This
   # isn't insecure due to only running in development.
   config.web_console.allowed_ips = [ "0.0.0.0/0" ]
-
-
 end
