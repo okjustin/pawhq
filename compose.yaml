@@ -15,7 +15,7 @@ x-app: &default-app
       condition: "service_started"
       required: false
   env_file:
-    - ".env"
+    - ".env.${RAILS_ENV}"
   restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
   stop_grace_period: "3s"
   tty: true
@@ -32,7 +32,7 @@ x-assets: &default-assets
       - "RAILS_ENV=${RAILS_ENV:-production}"
       - "NODE_ENV=${NODE_ENV:-production}"
   env_file:
-    - ".env"
+    - ".env.${RAILS_ENV}"
   profiles: ["assets"]
   restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
   stop_grace_period: "3s"
@@ -50,7 +50,7 @@ services:
     environment:
       POSTGRES_USER: "${POSTGRES_USER}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
-      # POSTGRES_DB: "${POSTGRES_DB}"
+      POSTGRES_DB: "${POSTGRES_DB}"
     image: "postgres:17.5-bookworm"
     profiles: ["postgres"]
     restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
