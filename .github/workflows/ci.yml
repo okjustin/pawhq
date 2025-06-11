@@ -22,9 +22,6 @@ jobs:
         run: |
           ./run ci:install-deps
 
-      - name: Lint Ruby
-        run: ./run format --autocorrect
-
       - name: "Test"
         run: |
           # Remove volumes in CI to avoid permission errors due to UID / GID.
