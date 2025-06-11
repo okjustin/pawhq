@@ -207,7 +207,10 @@ ci:test() {
   lint:shell
   format:shell --diff
 
-  cp --no-clobber .env.example .env
+  ENV_FILE=".env.${RAILS_ENV:-development}"
+
+  cp --no-clobber .env.example "$ENV_FILE"
+  ln -sf "$ENV_FILE" .env
 
   docker compose build
   docker compose up -d
