@@ -218,7 +218,7 @@ ci:test() {
   # shellcheck disable=SC1091
   . .env
 
-  wait-until "pg_isready -h localhost -p 5432 -U ${POSTGRES_USER}" 30
+  wait-until "pg_isready -h postgres -U ${POSTGRES_USER}" 30
 
   format -f github
 
