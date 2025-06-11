@@ -218,7 +218,9 @@ ci:test() {
   # shellcheck disable=SC1091
   . .env
 
-  wait-until "pg_isready -h postgres -U ${POSTGRES_USER}" 30
+  wait-until "docker compose run --rm \
+    -e PGPASSWORD=${POSTGRES_PASSWORD} \
+    postgres psql -U ${POSTGRES_USER} -d ${POSTGRES_DB} -c 'SELECT 1'"
 
   format -f github
 
