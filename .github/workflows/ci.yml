@@ -13,7 +13,6 @@ on:
 
 jobs:
   test:
-    if: false # Disabled for now
     runs-on: "ubuntu-22.04"
 
     steps:
