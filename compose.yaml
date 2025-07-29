@@ -120,21 +120,6 @@ services:
     <<: *default-assets
     command: "yarn build:css"
 
-  caddy:
-    image: caddy:alpine
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-    depends_on:
-      - web
-    profiles: ["caddy"]
-
 volumes:
   postgres: {}
   redis: {}
-  caddy_data: {}
-  caddy_config: {}
