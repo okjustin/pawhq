@@ -1,0 +1,3 @@
+http://143.198.243.217 {
+  reverse_proxy web:8080
+}
