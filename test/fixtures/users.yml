@@ -1,5 +1,0 @@
-one:
-  first_name: User
-  last_name: One
-  email: one@example.com
-  encrypted_password: password
