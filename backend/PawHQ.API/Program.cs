@@ -10,7 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var configuration = builder.Configuration;
 
-DotNetEnv.Env.Load();
+#if DEBUG
+DotNetEnv.Env.Load("../.env.local");
+#else
+DotNetEnv.Env.Load("../.env");
+#endif
 
 services.AddControllers();
 
