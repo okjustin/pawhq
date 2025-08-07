@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using PawHQ.Infrastructure.Data;
-using PawHQ.Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
+using PawHQ.Application.Interfaces;
+using PawHQ.Domain.Entities;
+using PawHQ.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -51,6 +53,10 @@ services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssembly(typeof(PawHQ.Application.AssemblyReference).Assembly);
 });
+
+services.AddScoped<IJwtTokenService, JwtTokenService>();
+
+services.AddScoped<IEmailService, StubEmailService>();
 
 services.AddOpenApi();
 

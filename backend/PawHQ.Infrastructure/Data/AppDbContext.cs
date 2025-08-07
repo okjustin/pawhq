@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PawHQ.Domain.Entities;
-using PawHQ.Infrastructure.Identity;
 
 namespace PawHQ.Infrastructure.Data;
 
