@@ -12,11 +12,19 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var configuration = builder.Configuration;
 
+var configBuilder = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddEnvironmentVariables();
+
 #if DEBUG
 DotNetEnv.Env.Load("../.env.local");
 #else
 DotNetEnv.Env.Load("../.env");
 #endif
+
+var config = configBuilder.Build();
+
+configuration.AddConfiguration(config);
 
 services.AddControllers();
 
