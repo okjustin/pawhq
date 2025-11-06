@@ -1,3 +1,5 @@
+import { FaUser } from 'react-icons/fa';
+
 type Props = {
   imageUrl?: string,
   size?: 'sm' | 'md' | 'lg',
@@ -31,15 +33,23 @@ export default function ProfilePicture({
     )
   }
 
-  const initials = userName
-    .split(' ')
-    .map(namePart => namePart.charAt(0).toUpperCase())
-    .slice(0, 2)
-    .join('')
+  if (userName) {
+    const initials = userName
+      .split(' ')
+      .map(namePart => namePart.charAt(0).toUpperCase())
+      .slice(0, 2)
+      .join('')
+  
+    return (
+      <div className={`${base} ${sizes[size]} ${backgroundColor}`}>
+        {initials}
+      </div>
+    )
+  }
 
   return (
     <div className={`${base} ${sizes[size]} ${backgroundColor}`}>
-      {initials}
+      <FaUser size={sizes[size].split(' ')[1]} />
     </div>
   )
 }
