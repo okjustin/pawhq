@@ -25,7 +25,7 @@ export default function FormattedDate({
   refreshMs = 30000,
   titleFormat = 'YYYY-MM-DD HH:mm'
 }: DateProps) {
-  const [tick, setTick] = useState(0)
+  const [_, setTick] = useState(0)
 
   useEffect(() => {
     if (!fromNow) return
