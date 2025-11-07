@@ -1,5 +1,5 @@
-import { FaInbox } from 'react-icons/fa'
 import { useState } from 'react'
+import { FaInbox } from 'react-icons/fa'
 import Toast, { type ToastProps } from './Toast'
 
 type ToastMessage = ToastProps & { id: string }
@@ -10,30 +10,33 @@ export default function Inbox() {
       id: crypto.randomUUID(),
       type: 'info',
       title: 'Welcome to PawHQ!',
-      message: 'Thanks for signing up to PawHQ. We hope you enjoy using our app.',
-      code: 'I-1000'
+      message:
+        'Thanks for signing up to PawHQ. We hope you enjoy using our app.',
+      code: 'I-1000',
     },
     {
       id: crypto.randomUUID(),
       type: 'success',
       title: 'Profile Updated',
       message: 'Your profile has been successfully updated.',
-      code: 'S-2001'
+      code: 'S-2001',
     },
     {
       id: crypto.randomUUID(),
       type: 'warning',
       title: 'Storage Almost Full',
-      message: 'You are nearing your storage limit. Consider upgrading your plan.',
-      code: 'W-3002'
+      message:
+        'You are nearing your storage limit. Consider upgrading your plan.',
+      code: 'W-3002',
     },
     {
       id: crypto.randomUUID(),
       type: 'error',
       title: 'Payment Failed',
-      message: 'There was an issue processing your payment. Please update your billing information.',
-      code: 'E-4003'
-    }
+      message:
+        'There was an issue processing your payment. Please update your billing information.',
+      code: 'E-4003',
+    },
   ])
 
   return (
@@ -75,5 +78,5 @@ export default function Inbox() {
         </div>
       </div>
     </div>
-  );
+  )
 }
