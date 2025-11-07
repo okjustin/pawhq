@@ -1,5 +1,15 @@
 @import 'tailwindcss';
 
+@import '@fontsource/inter/100.css';
+@import '@fontsource/inter/200.css';
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
+@import '@fontsource/inter/900.css';
+
 @theme {
   --color-white: #FFFFFF;
   --color-black: #000000;
@@ -75,4 +85,85 @@
   --color-text-muted: #6B7280;
   --color-text-inverse: #FFFFFF;
   --color-text-primary-brand: #204B21;
+
+  --text-font-family: 'Inter', sans-serif;
+  --text-font-weight-normal: 400;
+  --text-font-weight-medium: 500;
+  --text-font-weight-semibold: 600;
+  --text-font-weight-bold: 700;
+}
+
+@layer components {
+  .display-xl {
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight-bold);
+    font-size: 40px;
+    line-height: 48px;
+    color: var(--color-text-primary);
+  }
+
+  .display-lg {
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight-bold);
+    font-size: 32px;
+    line-height: 40px;
+    color: var(--color-text-primary);
+  }
+
+  .heading-md {
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight-semibold);
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--color-text-primary);
+  }
+
+  .heading-sm {
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight-semibold);
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--color-text-primary);
+  }
+
+  .body-lg {
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight-normal);
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--color-text-primary);
+  }
+
+  .body {
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight-normal);
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-text-primary);
+  }
+
+  .body-sm {
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight-normal);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-text-secondary);
+  }
+
+  .caption {
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight-normal);
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-text-muted);
+  }
+
+  .overline {
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight-medium);
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
 }
