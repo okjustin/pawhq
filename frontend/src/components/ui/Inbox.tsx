@@ -45,7 +45,7 @@ export default function Inbox() {
         type='button'
         aria-haspopup='true'
         aria-expanded='false'
-        className='p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-400'
+        className='rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-400 items-center justify-center flex'
       >
         <FaInbox className='text-2xl text-text-primary' />
       </button>
