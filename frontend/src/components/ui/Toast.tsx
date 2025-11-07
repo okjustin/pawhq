@@ -3,7 +3,7 @@ import Icon from './Icon'
 import { RxCross2 } from "react-icons/rx"
 import FormattedDate from './FormattedDate'
 
-type Props = {
+export type ToastProps = {
   type?: 'error' | 'warning' | 'info' | 'success'
   title?: string
   message?: string
@@ -23,7 +23,7 @@ export default function Toast({
   autoCloseMs,
   onClose,
   onClick
-}: Props) {
+}: ToastProps) {
 
   useEffect(() => {
     if (!autoCloseMs || !onClose) return
