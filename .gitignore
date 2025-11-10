@@ -193,3 +193,4 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 .DS_Store
+frontend/.vite/deps/_metadata.json
