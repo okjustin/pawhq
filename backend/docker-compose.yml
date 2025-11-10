@@ -1,26 +1,32 @@
 services:
   db:
     image: postgres:latest
-    container_name: pawhq-db
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "5432:5432"
+      - "${POSTGRES_HOST_PORT}:5432"
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
 
   api:
     build:
       context: ./PawHQ.API
-    environment:
-      - DB_CONNECTION=${DB_CONNECTION}
-      - JWT_KEY=${JWT_KEY}
     ports:
       - "5000:80"
+    env_file:
+      - .env
+    environment:
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__PawHQ: "Host=db;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD};Port=5432"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    volumes:
+      - dp_keys:/root/.aspnet/DataProtection-Keys
 
 volumes:
-  db_data:
+  pgdata:
+  dp_keys:
