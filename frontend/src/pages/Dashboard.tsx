@@ -4,7 +4,7 @@ import { getDashboard } from '../lib/api'
 export default function Dashboard() {
   const { data, isLoading, error } = useQuery({
     queryKey: ['dashboard'],
-    queryFn: getDashboard
+    queryFn: getDashboard,
   })
 
   if (isLoading) {
@@ -17,7 +17,6 @@ export default function Dashboard() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   )
